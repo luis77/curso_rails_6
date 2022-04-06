@@ -1,0 +1,22 @@
+<div class="small-container center-block">
+	<p class="font-weight text-uppercase margin-top">Editar usuario</p>
+	
+	<% if current_user.avatar.attached?%>
+		<%= image_tag url_for(current_user.avatar), height:200%>
+	<%end%>
+	<!--url_for le pasamos el registro del archivo y nos va a dar una direccion que apunta hacia ese archivo-->
+	
+	<%= form_with(model: current_user, local: true) do |form| %> <!--pasamos el registro que queremos editar en model, local:true para q no lo haga con ajax-->
+		<div class="field">
+			<%= form.label :avatar%>
+			<%= form.file_field :avatar%>
+		</div>
+
+		<div class="field">
+			<%= form.submit "Guardar", class:"btn btn-primary"%>
+		</div>
+	<%end%>
+
+</div>
+
+

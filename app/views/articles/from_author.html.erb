@@ -1,0 +1,7 @@
+<div class="large-container center-block">
+
+	<h1>Artículos publicados por <%= @user.email%></h1>
+
+	<%= render @user.articles%><!--va a user el parcial de articles ya creado debido a que es una coleccion de articulos, sin importar de donde venga-->
+
+</div>
